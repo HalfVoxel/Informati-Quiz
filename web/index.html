@@ -15,26 +15,22 @@
 
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="js/google-code-prettify/prettify.css" />
   <script src="js/vendor/custom.modernizr.js"></script>
 <link rel="stylesheet/less" type="text/css" href="style.less">
 <script src="less.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+
 
 </head>
 <body id="iq">
 	<h1>Informati-Quiz!</h1>
-	<div class="row">
-	<form role="dialog" data-type="action">
-		<header class="question">What is the average velocity of an unladen swallow?</header>
-		<ul class="btn-list small-block-grid-2 large-block-grid-4">
-			<li class="btn-wrapper"><a class="btn-answer button radius" href="#"><span>A1</span></a></li>
-			<li class="btn-wrapper"><a class="btn-answer button radius" href="#"><span>A2</span></a></li>
-			<li class="btn-wrapper"><a class="btn-answer button radius" href="#"><span>Hello World</span></a></li>
-			<li class="btn-wrapper"><a class="btn-answer button radius" href="#"><span>Blaha</span></a></li>
-		</ul>
+	<div class="row" id="question-wrapper">
 		<div class="qa-status">
 			<p>5 of 8 questions correctly answered</p>
 		</div>
-	</form>
 	</div>
+	<script src="js/infquiz.js" type="text/javascript"></script>
 </body>
 </html>

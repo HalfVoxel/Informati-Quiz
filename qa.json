@@ -43,7 +43,7 @@
       "cat": "web"
     },
     {
-      "q": "What the the following do in JavaScript?\n<xmp>try {\n\treturn 1;\n} finally {\n\treturn 2;\n}</xmp>",
+      "q": "What does the following do in JavaScript?\n<xmp>try {\n\treturn 1;\n} finally {\n\treturn 2;\n}</xmp>",
       "a": [
         "Return 2",
         "Return 1",
