@@ -10,6 +10,10 @@ def main ():
 
 	cats = data['categories']
 
+	for q in data['questions']:
+		if (not q['cat'] in cats):
+			print ("Invalid category '"+q['cat']+"' found")
+	
 	while len(cats) > 0:
 
 		print ("Choose one of the following categories")

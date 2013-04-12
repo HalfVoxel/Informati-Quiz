@@ -1,110 +1,485 @@
 {
-	"categories": ["hardware", "web", "mobile", "cs", "software", "os", "languages", "history"],
-	"questions": [
-	{
-		"q": "?",
-		"a": ["", "", "", ""],
-		"cat": ""
-	},
-	{
-		"q": "What does <xmp><b><i></b></i></xmp> parse as in HTML?",
-		"a": ["<xmp><b><i></i></b><i></i></xmp>", "<xmp><b><i></i></b><i></i></xmp> in quirks mode, else <xmp><b><i></i></b></xmp>", "<b><i></i></i>", "Syntax error"],
-		"desc": "<link to spec>",
-		"cat": "web"
-	},
-	{
-		"q": "What does <xmp>document.domain</xmp> do in JavaScript?",
-		"a": ["Gets and sets the origin", "Gets the origin", "Gets the topmost domain", "Gets the document XML namespace"],
-		"desc": "<link>",
-		"cat": "web"
-	},
-	{
-		"q": "What the the following do in JavaScript?\n<xmp>try {\n\treturn 1;\n} finally {\n\treturn 2;\n}</xmp>",
-		"a": ["Return 2", "Return 1", "Runtime error", "Syntax error"],
-		"cat": "languages"
-	},
-	{
-		"q": "What is the following an example of in Haskell:\n<xmp>f = map (flip mod 13)</xmp>",
-		"a": ["Pointfree style", "Pointless style", "Pointful style", "Pointwire style"],
-		"cat": "languages",
-		"comm": "Gangnam style?"
-	},
-	{
-		"q": "Which of the following is <strong>not</strong> Turing complete (when suitably generalized)?",
-		"a": ["Monopoly", "Magic the Gathering", "Minesweeper", "Minecraft"],
-		"comm": "Is this correct?",
-		"cat": "cs"
-	},
-	{
-		"q": "What CSS property is the most efficient to animate (with e.g. CSS transitions)?",
-		"a": ["transform", "left", "margin-left", "padding-left"],
-		"cat": "web"
-	},
-	{
-		"q": "In JavaScript, what is the result of the following?\n<xmp>if(x=0<!--x)++x;\nconsole.log(x);</xmp>",
-		"a": ["SyntaxError", "ReferenceError", "2", "Time Limit Exceeded"],
-		"desc": "For compatibility reasons, <xmp><!--</xmp> starts a comment in JavaScript. Not in EcmaScript, however.",
-		"cat": "languages"
-	},
-	{
-		"q": "What does <xmp>\"hello\".sup()</xmp> do in JavaScript?",
-		"a": ["Return <xmp>\"<sup>hello</sup>\"</xmp>", "Return <xmp>\"HELLO\"</xmp>", "Throw a ReferenceError", "Return String.prototype"],
-		"cat": "languages"
-	},
-	{
-		"q": "What does the following do in JavaScript?\n<xmp>function f() {\n\tvar a;\n\treturn delete a;\n}",
-		"a": ["Return false", "Return true", "Throw a SyntaxError", "Return undefined"],
-		"desc": "Statically declared variables cannot be deleted in JavaScript, so <xmp>delete a</xmp> returns false.",
-		"cat": "languages"
-	},
-	{
-		"q": "What does the expression <xmp>[] + {}</xmp> return in JavaScript?",
-		"a": ["<xmp>\"[object Object]\"</xmp>", "`0`", "It throws a TypeError", "`NaN`"],
-		"cat": "languages"
-	},
-	{
-		"q": "What does the following print in C++?\n<xmp>int n = 5;\nwhile (n --> 0)\n\tcout << n;</xmp>",
-		"a": ["43210", "That is not valid C++", "54321", "55555..."],
-		"cat": "languages"
-	},
-	{
-		"q": "What is a vtable?",
-		"a": ["A list of implementations for virtual functions", "A value table used to speed up database lookups", "The table of allocated virtual memory for a Linux process", "Precomputed lookup table used for H.264 video transcoding"],
-		"cat": "software"
-	},
-	{
-		"q": "What word best describes the format of Java .class files?",
-		"a": ["bytecode", "bitcode", "microcode", "assembly"],
-		"cat": "software"
-	},
-	{
-		"q": "Which of the following regexes matches precisely strings with a prime number of `a`s?",
-		"a": ["^(?!(a|(aa+)\\2+)$)a+$", "^(a+$){is_prime}", "You cannot construct such a regex", "^(?!a$)a*$(?<!a{2,}{2,})"],
-		"cat": "languages"
-	},
-	{
-		"q": "When was the Unix time epoch?",
-		"a": ["1970-01-01", "2000-01-01", "1900-01-01", "1912-06-12"],
-		"cat": "software"
-	},
-	{
-		"q": "Which complexity class is thought be to strictly contained in the others (unproven as of 2013)?",
-		"a": ["NC", "P", "NP", "#P"],
-		"cat": "cs"
-	},
-	{
-		"q": "What is the best known running time complexity of general matrix multiplication?",
-		"a": ["O(n^2.3727)", "&Theta;(n^3)", "O(n^(log_2 7))", "&Theta;(n^2 log n)"],
-		"cat": "cs"
-	},
-	{
-		"q": "Which of the following characters is NOT allowed in ext4 filenames",
-		"a": ["NUL (\\0)", "~", "carriage return (\\r)", "newline (\\n)"],
-		"cat": "os"
-	},
-	{
-		"q": "",
-		"a": ["", "", "", ""],
-		"cat": ""
-	}
-]}
+  "categories": [
+    "hardware",
+    "web",
+    "mobile",
+    "cs",
+    "software",
+    "os",
+    "languages",
+    "history"
+  ],
+  "questions": [
+    {
+      "q": "?",
+      "a": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cat": ""
+    },
+    {
+      "q": "What does <xmp><b><i></b></i></xmp> parse as in HTML?",
+      "a": [
+        "<xmp><b><i></i></b><i></i></xmp>",
+        "<xmp><b><i></i></b><i></i></xmp> in quirks mode, else <xmp><b><i></i></b></xmp>",
+        "<b><i></i></i>",
+        "Syntax error"
+      ],
+      "desc": "<link to spec>",
+      "cat": "web"
+    },
+    {
+      "q": "What does <xmp>document.domain</xmp> do in JavaScript?",
+      "a": [
+        "Gets and sets the origin",
+        "Gets the origin",
+        "Gets the topmost domain",
+        "Gets the document XML namespace"
+      ],
+      "desc": "<link>",
+      "cat": "web"
+    },
+    {
+      "q": "What the the following do in JavaScript?\n<xmp>try {\n\treturn 1;\n} finally {\n\treturn 2;\n}</xmp>",
+      "a": [
+        "Return 2",
+        "Return 1",
+        "Runtime error",
+        "Syntax error"
+      ],
+      "cat": "languages"
+    },
+    {
+      "q": "What is the following an example of in Haskell:\n<xmp>f = map (flip mod 13)</xmp>",
+      "a": [
+        "Pointfree style",
+        "Pointless style",
+        "Pointful style",
+        "Pointwire style"
+      ],
+      "cat": "languages",
+      "comm": "Gangnam style?"
+    },
+    {
+      "q": "Which of the following is <strong>not</strong> Turing complete (when suitably generalized)?",
+      "a": [
+        "Monopoly",
+        "Magic the Gathering",
+        "Minesweeper",
+        "Minecraft"
+      ],
+      "comm": "Is this correct?",
+      "cat": "cs"
+    },
+    {
+      "q": "What CSS property is the most efficient to animate (with e.g. CSS transitions)?",
+      "a": [
+        "transform",
+        "left",
+        "margin-left",
+        "padding-left"
+      ],
+      "cat": "web"
+    },
+    {
+      "q": "In JavaScript, what is the result of the following?\n<xmp>if(x=0<!--x)++x;\nconsole.log(x);</xmp>",
+      "a": [
+        "SyntaxError",
+        "ReferenceError",
+        "2",
+        "Time Limit Exceeded"
+      ],
+      "desc": "For compatibility reasons, <xmp><!--</xmp> starts a comment in JavaScript. Not in EcmaScript, however.",
+      "cat": "languages"
+    },
+    {
+      "q": "What does <xmp>\"hello\".sup()</xmp> do in JavaScript?",
+      "a": [
+        "Return <xmp>\"<sup>hello</sup>\"</xmp>",
+        "Return <xmp>\"HELLO\"</xmp>",
+        "Throw a ReferenceError",
+        "Return String.prototype"
+      ],
+      "cat": "languages"
+    },
+    {
+      "q": "What does the following do in JavaScript?\n<xmp>function f() {\n\tvar a;\n\treturn delete a;\n}",
+      "a": [
+        "Return false",
+        "Return true",
+        "Throw a SyntaxError",
+        "Return undefined"
+      ],
+      "desc": "Statically declared variables cannot be deleted in JavaScript, so <xmp>delete a</xmp> returns false.",
+      "cat": "languages"
+    },
+    {
+      "q": "What does the expression <xmp>[] + {}</xmp> return in JavaScript?",
+      "a": [
+        "<xmp>\"[object Object]\"</xmp>",
+        "`0`",
+        "It throws a TypeError",
+        "`NaN`"
+      ],
+      "cat": "languages"
+    },
+    {
+      "q": "What does the following print in C++?\n<xmp>int n = 5;\nwhile (n --> 0)\n\tcout << n;</xmp>",
+      "a": [
+        "43210",
+        "That is not valid C++",
+        "54321",
+        "55555..."
+      ],
+      "cat": "languages"
+    },
+    {
+      "q": "What is a vtable?",
+      "a": [
+        "A list of implementations for virtual functions",
+        "A value table used to speed up database lookups",
+        "The table of allocated virtual memory for a Linux process",
+        "Precomputed lookup table used for H.264 video transcoding"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "What word best describes the format of Java .class files?",
+      "a": [
+        "bytecode",
+        "bitcode",
+        "microcode",
+        "assembly"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "Which of the following regexes matches precisely strings with a prime number of `a`s?",
+      "a": [
+        "^(?!(a|(aa+)\\2+)$)a+$",
+        "^(a+$){is_prime}",
+        "You cannot construct such a regex",
+        "^(?!a$)a*$(?<!a{2,}{2,})"
+      ],
+      "cat": "languages"
+    },
+    {
+      "q": "When was the Unix time epoch?",
+      "a": [
+        "1970-01-01",
+        "2000-01-01",
+        "1900-01-01",
+        "1912-06-12"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "Which complexity class is thought be to strictly contained in the others (unproven as of 2013)?",
+      "a": [
+        "NC",
+        "P",
+        "NP",
+        "#P"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "What is the best known running time complexity of general matrix multiplication?",
+      "a": [
+        "O(n^2.3727)",
+        "&Theta;(n^3)",
+        "O(n^(log_2 7))",
+        "&Theta;(n^2 log n)"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "Which of the following characters is NOT allowed in ext4 filenames",
+      "a": [
+        "NUL (\\0)",
+        "~",
+        "carriage return (\\r)",
+        "newline (\\n)"
+      ],
+      "cat": "os"
+    },
+    {
+      "q": "What is 'Dvorak' and 'Colemak' examples of?",
+      "a": [
+        "Keyboard layouts",
+        "Algorithms",
+        "Two early computers versions",
+        "Variants of the Unix operating system"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "Which of the following algorithms (listed by their initials) is usually used for string matching?",
+      "a": [
+        "KMP",
+        "DFS",
+        "BFS",
+        "GNU"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "Octrees and Quadtrees are basically the same datastructures but differ primarily in, what?",
+      "a": [
+        "Number of dimensions",
+        "Name, otherwise same",
+        "Octrees cannot contain points, while quadtrees can",
+        "Quadtrees cannot contain points, while octrees can"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "Which of the following is a theorem in optimization theory?",
+      "a": [
+        "Max-flow min-cut",
+        "Max-flow max-cut",
+        "Min-flow max-cut",
+        "None of these"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "Will water short circuit electronics?",
+      "a": [
+        "Yes, unless it is deionized",
+        "Yes",
+        "No",
+        "Depends on the atmospheric noise"
+      ],
+      "cat": "hardware"
+    },
+    {
+      "q": "1 KiB is how many bytes?",
+      "a": [
+        "1024",
+        "1000",
+        "256",
+        "1048576"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "The Watson AI computer system beat the world master 2011 in what?",
+      "a": [
+        "What is Jeopardy?",
+        "Chess",
+        "Football",
+        "Solving sudoku"
+      ],
+      "cat": "history"
+    },
+    {
+      "q": "Which of the following RGB values is the most green one?",
+      "a": [
+        "(0,255,0)",
+        "(255,0,0)",
+        "(127,0,127)",
+        "(0.5,1,0.5)"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "A* is an algorithm often used for:",
+      "a": [
+        "Finding the shortest path in a graph",
+        "Sorting",
+        "Finding extrema in a function",
+        "It is not an algorithm at all"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "JSON stands for:",
+      "a": [
+        "JavaScript Object Notation",
+        "Javascript Standard Object Notation",
+        "Java Support Over Network",
+        "Just Some Other Notation"
+      ],
+      "cat": "languages"
+    },
+    {
+      "q": "15 is in binary:",
+      "a": [
+        "1111",
+        "10001",
+        "1010",
+        "0xF"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "The International Olympiad in Informatics (IOI) was first held in what year?",
+      "a": [
+        "1989",
+        "1962",
+        "2001",
+        "There is no contest with that name"
+      ],
+      "cat": "history"
+    },
+    {
+      "q": "Manhattan Distance between two points (x1,y1),(x2,y2) is in 2D defined as what?",
+      "a": [
+        "abs(x2-x1) + abs(y2-y1)",
+        "(x2-x1) + (y2-y1)",
+        "sqrt((x2-x1)^2 + (y2-y1)^2)",
+        "(x2-x1)^2 + (y2-y1)^2"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "Which of the following is a Linux distribution?",
+      "a": [
+        "Mint",
+        "OSX",
+        "CVSD",
+        "Java"
+      ],
+      "cat": "os"
+    },
+    {
+      "q": "ENIAC is what?",
+      "a": [
+        "One of the first general purpose computers",
+        "A lesser known programming language",
+        "A type of RAM memory",
+        "An IT company"
+      ],
+      "desc": "ENIAC stands for Electronic Numerical Integrator and Computer",
+      "cat": "history"
+    },
+    {
+      "q": "In what of the following programming languages is the following statement false: '5/2 == 2'",
+      "a": [
+        "JavaScript",
+        "C++",
+        "Python",
+        "Haskell"
+      ],
+      "cat": "languages",
+      "desc": "JavaScript is one of quite few languages that do not use rounding for integer division. Mainly because there is no distinction between integers and other numbers in JavaScript"
+    },
+    {
+      "q": "In the expression 'a + b' (a and b are integers), '+' is what kind of operator?",
+      "a": [
+        "A binary operator",
+        "A unary operator",
+        "An object operator",
+        "An IRC operator"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "The command 'sl' on most unix systems does what?",
+      "a": [
+        "Shows a train moving across the terminal window",
+        "Lists the contents of the current directory",
+        "Shows the timetables for busses in the city of Stockholm (Sweden)",
+        "Sets the locale of the machine"
+      ],
+      "cat": "software",
+      "desc": "The 'sl' command was originally written to 'punish' those who misspelled the 'ls' command"
+    },
+    {
+      "q": "What is the largest prime number that can be stored in a 32-bit signed integer?",
+      "a": [
+        "2^31 - 1",
+        "2 147 483 587",
+        "2^31",
+        "5"
+      ],
+      "desc": "Yes, MAX_INT is a prime number",
+      "cat": "software"
+    },
+    {
+      "q": "Bluetooth is named after:",
+      "a": [
+        "Harald Blåtand",
+        "Erik Bluetooth",
+        "A certain type of blueish rocks",
+        "A place in northern England"
+      ],
+      "desc": "Harald Blåtand was king of Denmark and Norway in the 10th century",
+      "cat": "history"
+    },
+    {
+      "q": "Google is named after what?",
+      "a": [
+        "Googol",
+        "Goggles",
+        "They made it up from scratch"
+      ],
+      "desc": "Googol is a number with a one and 100 zeroes, i.e 10^100. It was actually a typo",
+      "cat": "history"
+    },
+    {
+      "q": "PageRank is named so because?",
+      "a": [
+        "The original author was named Larry Page",
+        "It ranks pages based for search engines",
+        "The algorithm requires a substantial amount of page swapping"
+      ],
+      "desc": "PageRank is an algorithm used by Google to rank pages for their search engine",
+      "cat": "history"
+    },
+    {
+      "q": "JVM stands for:",
+      "a": [
+        "Java Virtual Machine",
+        "Jagged Visual Matrix",
+        "JSON Video Model",
+        "JSON Validation Message"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "0xF is in decimal:",
+      "a": [
+        "15",
+        "16",
+        "9",
+        "231"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "In the ASCII table, 'A' is represented by:",
+      "a": [
+        "65",
+        "97",
+        "0",
+        "12"
+      ],
+      "cat": "software"
+    },
+    {
+      "q": "The Grassfire Transform operates on what?",
+      "a": [
+        "Pixels",
+        "Waveform data (e.g soundwaves)",
+        "A polygon mesh",
+        "Points"
+      ],
+      "cat": "cs"
+    },
+    {
+      "q": "",
+      "a": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cat": ""
+    }
+  ]
+}
