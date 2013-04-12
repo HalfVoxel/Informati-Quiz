@@ -1,0 +1,41 @@
+import json
+import random
+
+def main ():
+	f = open("qa.json")
+	data = json.loads(f.read())
+	
+	random.shuffle(data)
+	for obj in data:
+		
+		print (obj['q'])
+		v = list(obj['a'])
+		corr = v[0]
+		random.shuffle(v)
+		for i in range(0,len(v)):
+			print ("[" + str(i+1) +"] " + v[i])
+	
+		s = -1
+		while s == -1:
+			val = raw_input()
+			try:
+				s = int(val)
+			except:
+				print ("Please enter a number in the range [" + "1" + "," + str(len(v))+"]")
+		
+		print ("You answered " + s)
+		if (v[s-1] == corr):
+			print ("Correct!")
+		else:
+			print ("Sorry, the correct answer was: " + corr)
+		
+		try:
+			print (obj['desc'])
+		except:
+		    pass
+		    
+		print ("")
+	
+	print ("Congratulations! You have completed the WHOLE QUIZ!!! You must be an awesome haxxer!")
+	
+main ()
