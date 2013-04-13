@@ -26,7 +26,50 @@ h1 {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 20em;
+	width: 40%;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#qa-progress {
+	
+	//-webkit-box-orient: horizontal;
+	//-webkit-box-orient: horizontal;
+	//width: 100%;
+
+	ul {
+		display:-moz-box;
+		-moz-box-pack:center;
+
+		display:-webkit-box;
+		-webkit-box-pack:center;
+		
+		display:box;
+		box-pack:center;
+	}
+	li {
+		display: inline-block;
+		list-style-type: none;
+		margin: 0.2em;
+		width: 0.8em;
+		height: 0.8em;
+		background: #CCC;
+		border-radius: 0.4em;
+		
+		box-shadow: inset 1px 1px 4px rgba(0,0,0,0.3);
+		
+		&.done-incorrect {
+			background: #944;
+		}
+
+		&.done-correct {
+			background: #494;
+		}
+
+		&.done-skipped {
+			background: #999;
+		}
+	}
 }
 
 .correct {

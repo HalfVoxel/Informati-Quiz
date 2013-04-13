@@ -83,6 +83,9 @@ function shuffle (arr) {
 	throw "ShouldNotHappenException";
 }
 
+infquiz.setupQuestions() {
+	
+}
 infquiz.showQuestion = function (qindex) {
 	console.log (qindex);
 
@@ -104,7 +107,7 @@ infquiz.showQuestion = function (qindex) {
 	for (var i=0;i<answers.length;i++) {
 		var j = i;
 		var btn = $("<li class='btn-wrapper'><a class='btn-answer button radius' href='#'><span>" + answers[i] + "</span></li>");
-		btn.click (function(i) {return function () {infquiz.answerQuestion(i); }}(i));
+		btn.click (function(i) {return function (e) {infquiz.answerQuestion(i); e.preventDefault ();}}(i));
 		btn.appendTo(ul);
 	}
 
@@ -137,7 +140,12 @@ infquiz.nextQuestion = function () {
 infquiz.showAnswer = function (index) {
 
 	var ansgroup = $("<div id='answer-group'></div>");
-	var ans = $("<p class='question-answer'>The answer was '"+infquiz.currentQuestion.a[0] +"'</p>");
+	var anstext = infquiz.currentQuestion.a[0];
+	if (anstext.indexOf('\n') != -1 || anstext.indexOf('<xmp>') != -1 || anstext.indexOf('<br>') != -1) {
+		var ans = $("<div class='question-answer'>The answer was<br>"+anstext +"</div>");
+	} else {
+		var ans = $("<div class='question-answer'>The answer was '"+anstext +"'</div>");
+	}
 	ans.appendTo (ansgroup);
 
 	if (index == infquiz.corrans) {
@@ -159,7 +167,7 @@ infquiz.showAnswer = function (index) {
 	ansgroup.appendTo($("#question-wrapper"));
 	ansgroup.fadeOut(0);
 	ansgroup.fadeIn ('fast');
-
+	infquiz.prettify();
 }
 
 infquiz.prettify = function () {
@@ -170,5 +178,6 @@ infquiz.prettify = function () {
 
 $(document).ready (function () {
 	infquiz();
+	infquiz.setupQuestions();
 	infquiz.nextQuestion();
 });
