@@ -65,27 +65,39 @@ var quizdata = {
       "comm": "Gangnam style?"
     }
  ]};
-
-var infquiz = function () {
-	this.solved = 0;
-	this.answered = 0;
-	this.corrans = 0;	
-	this.currentQuestion = null;
+var infquiz = function () {	
 }
 
+infquiz.solved = 0;
+infquiz.answered = 0;
 infquiz.currentQuestionIndex = 0;
 
+/** Shuffles an array of unique values in place and returns the resulting index of the first element.
+	NaNs are not allowed in the array */
 function shuffle (arr) {
 	var j=0;
 	var tmp = arr[0];
 	for (var i = arr.length-1,q;i >= 0;i--) { j = (Math.random()*(i+1))|0; q = arr[i]; arr[i] = arr[i-j]; arr[i-j] = q; }
 	for (var i =0; i<arr.length;i++) if (arr[i] == tmp) return i;
-	throw "ShouldNotHappenException";
+	throw "NaNInArrayException";
 }
 
-infquiz.setupQuestions() {
+infquiz.setupQuestions = function () {
+	infquiz.totalQuestions = quizdata.questions.length;
+
+	var st = $("<div id='qa-progress'></div>");
+	var ul = $("<ul></ul>");
 	
+	for (var i =0;i<infquiz.totalQuestions;i++) {
+		$("<li id='qa-statusbar-"+i+"'></li>").appendTo (ul);
+	}
+
+	ul.appendTo(st);
+	st.appendTo ($("#question-wrapper"));
+
+	$("<div id='qa-status'></div>").appendTo($("#question-wrapper"));
 }
+
 infquiz.showQuestion = function (qindex) {
 	console.log (qindex);
 
@@ -117,7 +129,6 @@ infquiz.showQuestion = function (qindex) {
 }
 infquiz.answerQuestion = function (index) {
 	console.log ("Answered " + index);
-	infquiz.answered++;
 
 	$(".btn-list").fadeOut('fast', function () { infquiz.showAnswer (index); });
 	//$("#question-wrapper").fadeOut ('slow', );
@@ -152,10 +163,16 @@ infquiz.showAnswer = function (index) {
 		console.log ("Correct!");
 		infquiz.solved++;
 		ans.addClass('correct');
+		$("#qa-statusbar-"+infquiz.currentQuestionIndex).addClass("done-correct");
 	} else {
 		console.log ("Not Correct!");
 		ans.addClass('incorrect');
+		$("#qa-statusbar-"+infquiz.currentQuestionIndex).addClass("done-incorrect");
 	}
+
+	infquiz.answered++;
+
+	$("#qa-status").html("<p>You have solved " + infquiz.solved + " of " + infquiz.answered + " questions</p>");
 
 	console.log ("Shwowing answer");
 	$(".btn-list").remove();

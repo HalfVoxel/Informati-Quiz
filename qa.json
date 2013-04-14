@@ -5,6 +5,7 @@
     "mobile",
     "cs",
     "software",
+    "graphics",
     "os",
     "languages",
     "history"
@@ -469,17 +470,44 @@
         "A polygon mesh",
         "Points"
       ],
-      "cat": "cs"
+      "cat": "graphics"
     },
     {
-      "q": "",
+      "q": "Which type of curve is most commonly used for vector graphics?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "Bézier Curve",
+        "Sinus Curve",
+        "Dragon Curve",
+        "Catmull Rom Spline"
       ],
-      "cat": ""
+      "cat": "graphics"
+    },
+    {
+      "q": "In computer graphics,which of the following techniques for determining a pixels colour by following the path of the light does not have a bidirectonal variant?",
+      "a": [
+        "Ray casting",
+        "Ray tracing",
+        "Photon mapping",
+        "Path tracing"
+      ],
+      "desc": "Ray casting was one of the earliest attempts at following the path from the light by starting at the eye and tracing from there.",
+      "cat": "graphics"
+    },
+    {
+      "q": "The process of removing one side of faces when rendering a scene to save performance (because those faces are usally hidden anyway) is called what?",
+      "a": [
+        "Back-face culling",
+        "Occlusion culling",
+        "Hidden surface removal",
+        "The painter's algorithm"
+        ],
+        "cat": "graphics"
+    },
+    {
+      "q": "Which of these is a technique to avoid flickering or tearing in real-time computer graphics renderings (e.g in games)?",
+      "a": ["Double buffering", "Anti-aliasing", "Ray tracing", "Alpha compositing"],
+      "alt": ["V-sync"],
+      "cat": "graphics"
     }
   ]
 }
