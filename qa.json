@@ -508,6 +508,9 @@
       "a": ["Double buffering", "Anti-aliasing", "Ray tracing", "Alpha compositing"],
       "alt": ["V-sync"],
       "cat": "graphics"
+    },
+    {
+      "q": ""
     }
   ]
 }
