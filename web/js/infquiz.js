@@ -12,16 +12,6 @@ var quizdata = {
   ],
   "questions": [
     {
-      "q": "?",
-      "a": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "cat": ""
-    },
-    {
       "q": "What does <xmp><b><i></b></i></xmp> parse as in HTML?",
       "a": [
         "<xmp><b><i></i></b><i></i></xmp>",
@@ -70,7 +60,7 @@ var infquiz = function () {
 
 infquiz.solved = 0;
 infquiz.answered = 0;
-infquiz.currentQuestionIndex = 0;
+infquiz.currentQuestionIndex = -1;
 
 /** Shuffles an array of unique values in place and returns the resulting index of the first element.
 	NaNs are not allowed in the array */
@@ -110,7 +100,7 @@ infquiz.showQuestion = function (qindex) {
 	var b = $("<form role='dialog' data-type='action' id='question-dialog'></form>").appendTo (wrapper);
 
 	$("<header>").addClass("question").html(q.q).appendTo (b);
-	var ul = $("<ul class='btn-list small-block-grid-2 large-block-grid-4'>").appendTo(b);
+	var ul = $("<ul class='btn-list small-block-grid-2'>").appendTo(b);
 	
 
 	var answers = q.a.slice();
@@ -118,7 +108,7 @@ infquiz.showQuestion = function (qindex) {
 
 	for (var i=0;i<answers.length;i++) {
 		var j = i;
-		var btn = $("<li class='btn-wrapper'><a class='btn-answer button radius' href='#'><span>" + answers[i] + "</span></li>");
+		var btn = $("<li class='btn-wrapper'><a class='btn-answer' href='#'><span>" + answers[i] + "</span></li>");
 		btn.click (function(i) {return function (e) {infquiz.answerQuestion(i); e.preventDefault ();}}(i));
 		btn.appendTo(ul);
 	}

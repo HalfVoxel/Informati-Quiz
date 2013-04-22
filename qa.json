@@ -12,16 +12,6 @@
   ],
   "questions": [
     {
-      "q": "?",
-      "a": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "cat": ""
-    },
-    {
       "q": "What does <xmp><b><i></b></i></xmp> parse as in HTML?",
       "a": [
         "<xmp><b><i></i></b><i></i></xmp>",
@@ -508,9 +498,6 @@
       "a": ["Double buffering", "Anti-aliasing", "Ray tracing", "Alpha compositing"],
       "alt": ["V-sync"],
       "cat": "graphics"
-    },
-    {
-      "q": ""
     }
   ]
 }
