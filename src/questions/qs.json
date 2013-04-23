@@ -1,0 +1,49 @@
+[
+	{"q": "This is a question",
+	 "a": ["A1", "A2", "A3", "A4"],
+	 "desc": "This is a description",
+	 "cat": "hardware"
+	},
+	{"q": "What is the CAS latency of a RAM memory with timings 1-2-3-4?",
+	 "a": ["1 cycles", "2 cycles", "3 cycles", "4 cycles"],
+	 "cat": "hardware"
+	},
+	{"q": "Which bus connects the CPU of a computer with its main board?",
+	 "a": ["The front side bus", "The data bus", "An expansion bus", "A Universal Serial Bus"],
+	 "cat": "hardware"
+	},
+	{"q": "What is the purpose of Physical Address Extension?",
+	 "a": ["More memory can be allocated", "Less corruption of RAM", "The RAM can persist between reboots", "Better memory address separation between processes"],
+	 "desc": "PAE extends the memory addresses of 32-bit x86 systems to 52 bits",
+	 "cat": "hardware"
+	},
+	{"q": "What is true when using multiple graphics cards with SLI?",
+	 "a": ["The faster card runs at the speed of the slower card", "The cards must be of the same model", "The frame rate always improves", "You can not use multiple displays"],
+	 "cat": "hardware"
+	},
+	{"q": "Who of the following are not an author of Introduction to Algorithms, 4th ed.?",
+	 "a": ["Donald Knuth", "Ronald Rivest", "Thomas Cormen", "Charles Leierson"],
+	 "cat": "history"
+	},
+	{"q": "What is the asymptotic running time of the Floyd-Warshall algorithm on a graph (V, E)?",
+	 "a": ["&Theta;(|V|^3)", "&Theta;(|E| log log |V|)", "&Theta;(|E| log |V|)", "&Theta;(|V||E|)"],
+	 "desc": "The Floyd-Warshall algorithm solves the all-pairs shortest path-problem.",
+	 "cat": "compsci"
+	},
+	{"q": "In what version of the Java language was a templating system (called <emph>generics</emph>) introduced?",
+	 "a": ["Java SE 5.0", "Java SE 1.4", "Java EE 5.0", "Java SE 7.0"],
+	 "cat": "languages"
+	},
+	{"q": "Which of the following version control systems is not decentralized?",
+	 "a": ["svn", "git", "darcs", "bazaar"],
+	 "cat": "software"
+	},
+	{"q": "What problem reduction have been used by compilers to solve the register allocation problem?",
+	 "a": ["Graph coloring", "Graph hamiltonicity", "Knapsack", "Subset sum"],
+	 "cat": "compsci"
+	},
+	{"q": "What is Google's brand of tablets and smartphones called?",
+	 "a": ["Nexus", "Galaxy", "Xperia", "iPhone"],
+	 "cat": "mobile"
+	},
+]

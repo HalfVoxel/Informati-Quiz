@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang=en >
+	<head>
+		<meta charset=utf8 />
+		<script type=text/javascript src="{{ static_url("socket.js") }}"></script>
+		<script type=text/javascript src="{{ static_url("quiz_list.js") }}"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link href="{{ static_url("style.css") }}" rel=stylesheet />
+		<title>Informati-quiz</title>
+	</head>
+	<body>
+		<header id=logo >
+			<h1 id=logo_text >Informati-quiz</h1>
+		</header>
+		<div id=logged_in >
+			Logged in as <span class=logged_in_username > {{ escape(user['name']) }} </span>
+		</div>
+		<div id=start_game >
+			<button id=start_button >New game</button>
+		</div>
+		<div id=my_turn >
+		</div>
+	</body>
+</html>

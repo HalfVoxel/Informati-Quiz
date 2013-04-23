@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang=en >
+	<head>
+		<meta charset=utf8 />
+		<script type=text/javascript src="{{ static_url("quiz.js") }}"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link href="{{ static_url("style.css") }}" rel=stylesheet />
+		<title>Informati-quiz</title>
+	</head>
+	<body>
+		<h1>Informati-quiz</h1>
+		Player: <span class=user_name > {{ escape(user['name']) }} </span>
+		<a id=start_quiz href=javascript:startQuiz(); >Start quiz</a>
+		<div id=question >
+			<span id=question_text >
+			</span>
+			<table>
+				<tr>
+					<td><button id=alt0 onclick=javascript:answer(0); ></button></td>
+					<td><button id=alt1 onclick=javascript:answer(1); ></button></td>
+				</tr>
+				<tr>
+					<td><button id=alt2 onclick=javascript:answer(2); ></button></td>
+					<td><button id=alt3 onclick=javascript:answer(3); ></button></td>
+				</tr>
+			</table>
+			<!-- <span id=question_desc >
+			</span> -->
+			<div>
+				Correct: <span id=correct_qs >0</span> of <span id=total_qs >0</span>
+			</div>
+		</div>
+	</body>
+</html>
