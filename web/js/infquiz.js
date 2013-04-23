@@ -100,18 +100,29 @@ infquiz.showQuestion = function (qindex) {
 	var b = $("<form role='dialog' data-type='action' id='question-dialog'></form>").appendTo (wrapper);
 
 	$("<header>").addClass("question").html(q.q).appendTo (b);
-	var ul = $("<ul class='btn-list small-block-grid-2'>").appendTo(b);
-	
+	//var ul = $("<ul class='btn-list small-block-grid-2'>").appendTo(b);
+	var ul = $("<ul class='btn-list unstyled'></ul>").appendTo(b);
 
 	var answers = q.a.slice();
 	infquiz.corrans = shuffle(answers);
 
+    var xwidth = 2;
+
+    var row = null;
+
 	for (var i=0;i<answers.length;i++) {
+        if (i % xwidth == 0) {
+            //if (row != null) row.appendTo (ul);
+            //row = $("<tr>");
+        }
 		var j = i;
-		var btn = $("<li class='btn-wrapper'><a class='btn-answer' href='#'><span>" + answers[i] + "</span></li>");
+		var btn = $("<li class='btn-wrapper'><a class='btn-answer' href='#'><span>" + answers[i] + "</span></a></li>");
 		btn.click (function(i) {return function (e) {infquiz.answerQuestion(i); e.preventDefault ();}}(i));
 		btn.appendTo(ul);
 	}
+    if (row != null) {
+        //row.appendTo (ul);
+    }
 
 	//$("<div class='qa-status'><p>" + infquiz.solved + " of " + infquiz.answers);
 	infquiz.prettify();

@@ -95,15 +95,27 @@ xmp {
 	font-family: monospace;
 	font-style: normal;
 	//width: 100%;
-	background: #EEE;
+	background: #252525;
+	box-shadow: inset 0px 0px 10px #000;
 	padding: 10px;
 	border-radius: 5px;
 	margin: 5px;
 }
 
+a:hover, a:active {
+	text-decoration: none;
+}
+
 .btn-list {
+	display: inline-block;
 	margin: 0px !important;
 	padding: @btn-spacing;
+	//width: 100%;
+	background: none;
+	border: none;
+	//height: 300px;
+	width: 75%;
+	
 }
 
 #qa-status {
@@ -118,17 +130,25 @@ xmp {
 }
 
 #iq .btn-wrapper {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	//box-sizing: border-box;
+	//-moz-box-sizing: border-box;
 	//width: 100%;
-	padding: @btn-spacing;
+	padding: 5px;
+
 }
 
+#question-dialog {
+	padding-right: 20px;
+	padding-left: 20px;
+	text-align: center;
+}
 .btn-answer {
-	width: 100%;
-	padding: 15px;
-	background: #333;
 	display: block;
+	//height: 100%;
+	//width: 100%;
+	//padding: 15px;
+	background: #333;
+	//padding: 15px;
 	border-radius: 4px;
 	border: 1px solid #888;
 	//display: block;
