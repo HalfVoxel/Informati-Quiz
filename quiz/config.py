@@ -1,7 +1,10 @@
+# Configuration for Informati-Quiz
+
 import os.path
 
-QUESTION_DIR = os.path.join("data", "questions")
-COOKIE_SECRET = "QbMdMpllVryRmCzlpeo3MtDBsiFr3McnbDBUnVPvJKFHDmlH0YboD9itosjR0YZqkTNxcMu8wggIueRXqVa8U9dl"
-PORT = 80
+COOKIE_SECRET = "replace_with_random_secret"
+QUESTION_PATH = os.path.join("data", "questions")
 TEMPLATE_PATH = "view"
 STATIC_PATH = "static"
+PORT = 80
+DEBUG = True
