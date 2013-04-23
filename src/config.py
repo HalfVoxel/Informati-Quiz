@@ -1,5 +1,0 @@
-QUESTION_DIR = "questions"
-COOKIE_SECRET = "ODwi4bsPaJfOCt9MhDK9cUKqjP04W2xlVQVOiPSz"
-PORT = 8888
-TEMPLATE_PATH = "templates"
-STATIC_PATH = "static"

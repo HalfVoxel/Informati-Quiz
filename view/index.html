@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<div id="main_page" class="panel columns small-6 small-centered">
+		<p>
+			Informati-Quiz is a competitive quiz game mainly targeted to those with an interest in IT and informatics.
+			You play against others, answering questions of varying difficulty and categories. The game is open-source
+			and completely free to play. Questions may be proposed by adding pull requests to the games Github repository.
+		</p>
+		<p>
+			Currently, a Google account is necessary to play using the main server.
+		</p>
+		{% if user is None %}
+		<a href="login" class="button">Log in with Google</a>
+		{% else %}
+		<a href="quizlist" class="button">Play Informati-Quiz</a>
+		{% end %}
+	</div>
+</div>
+{% end %}

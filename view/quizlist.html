@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<div id="quiz_list" class="panel columns small-6 small-centered">
+		<p>Logged in as <span class="username">{{ escape(user['name']) }}</span></p>
+		<div><a href="javascript:newGame();" class="button large expand">Start new game</a></div>
+	</div>
+</div>
+{% end %}
+{% block head %}
+<script src={{ static_url("js/quizlist.js") }} type="text/javascript"></script>
+{% end %}
